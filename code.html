@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sprite Cool - Rose Flavored Milk</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#ca4273",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-high": "#fae3e5",
+                    "background": "#fff8f7",
+                    "surface-container": "#ffe9eb",
+                    "surface": "#fff8f7",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#777471",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffd9e1",
+                    "on-secondary-container": "#755d5f",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#cbc5c2",
+                    "secondary-container": "#f8d8db",
+                    "on-primary-container": "#fffbff",
+                    "primary-fixed-dim": "#ffb1c5",
+                    "on-tertiary-fixed-variant": "#494644",
+                    "on-secondary-fixed-variant": "#574144",
+                    "surface-dim": "#ebd5d7",
+                    "primary": "#a9275a",
+                    "surface-variant": "#f4dddf",
+                    "on-background": "#25181a",
+                    "secondary": "#70585b",
+                    "on-secondary-fixed": "#281719",
+                    "surface-container-highest": "#f4dddf",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#fbdbde",
+                    "inverse-surface": "#3b2d2f",
+                    "outline-variant": "#ddbfc5",
+                    "tertiary": "#5e5b59",
+                    "secondary-fixed-dim": "#debfc2",
+                    "on-surface": "#25181a",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#3f001b",
+                    "tertiary-fixed": "#e7e1de",
+                    "on-primary-fixed-variant": "#8c0b45",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#1d1b19",
+                    "on-surface-variant": "#574146",
+                    "surface-tint": "#ac2a5d",
+                    "inverse-primary": "#ffb1c5",
+                    "outline": "#8a7176",
+                    "surface-bright": "#fff8f7",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#ffecee",
+                    "surface-container-low": "#fff0f1",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "max-width": "1280px",
+                    "unit": "8px",
+                    "margin-desktop": "80px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "label-md": [
+                            "Plus Jakarta Sans"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.25rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-brand {
+                flex-direction: row;
+                align-items: center;
+                gap: 2rem;
+            }
+        }
+
+        .hero-brand__logo {
+            width: clamp(5.5rem, 18vw, 8.5rem);
+            height: auto;
+            flex-shrink: 0;
+            filter: drop-shadow(0 12px 28px rgba(169, 39, 90, 0.28));
+            animation: heroLogoFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes heroLogoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero-brand__title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.25rem, 11vw, 5.75rem);
+            font-weight: 700;
+            line-height: 1.02;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #3f001b 0%, #a9275a 45%, #ca4273 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: none;
+            margin: 0;
+        }
+
+        .hero-brand__tagline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(1rem, 2.8vw, 1.625rem);
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #a9275a;
+            margin: 0.75rem 0 0;
+            padding-left: 0.15em;
+            position: relative;
+        }
+
+        .hero-brand__tagline::before {
+            content: '';
+            display: block;
+            width: 3.5rem;
+            height: 3px;
+            background: linear-gradient(90deg, #a9275a, #ffb1c5);
+            border-radius: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-brand__accent {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+            font-weight: 600;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #70585b;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed z-50 w-full transition-all duration-300" id="global-nav">
+<div class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl bg-white/60 dark:bg-black/20 backdrop-blur-md border-b border-primary/10 flat no shadows docked full-width top-0">
+<div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Brand -->
+<div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary text-[32px]" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim tracking-tight">Sprite Cool</span>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden lg:flex items-center gap-1">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-4 py-2 rounded-full nav-link" href="#hero" data-nav-link>Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-4 py-2 rounded-full nav-link" href="#story" data-nav-link>Our Story</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-4 py-2 rounded-full nav-link" href="#benefits" data-nav-link>Benefits</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-4 py-2 rounded-full nav-link" href="#gallery" data-nav-link>Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-4 py-2 rounded-full nav-link" href="#reviews" data-nav-link>Reviews</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-4 py-2 rounded-full nav-link" href="#ingredients" data-nav-link>Ingredients</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-primary-container/10 px-4 py-2 rounded-full nav-link" href="#find-us" data-nav-link>Find Us</a>
+</nav>
+<a href="#shop" class="hidden md:inline-flex items-center gap-2 bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm nav-link" data-nav-link>Shop Now</a>
+<button type="button" class="lg:hidden text-primary p-2" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-mobile-menu" aria-label="Open menu">
+<span class="material-symbols-outlined nav-icon-menu">menu</span>
+<span class="material-symbols-outlined nav-icon-close hidden">close</span>
+</button>
+</div>
+</div>
+<div class="lg:hidden bg-surface/95 backdrop-blur-xl border-b border-primary/10 overflow-hidden max-h-0 opacity-0 transition-all duration-300" id="nav-mobile-menu">
+<nav class="flex flex-col px-margin-mobile py-4 gap-1">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-4 py-3 rounded-lg nav-link" href="#hero" data-nav-link>Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-4 py-3 rounded-lg nav-link" href="#story" data-nav-link>Our Story</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-4 py-3 rounded-lg nav-link" href="#benefits" data-nav-link>Benefits</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-4 py-3 rounded-lg nav-link" href="#gallery" data-nav-link>Gallery</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-4 py-3 rounded-lg nav-link" href="#reviews" data-nav-link>Reviews</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-4 py-3 rounded-lg nav-link" href="#ingredients" data-nav-link>Ingredients</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary px-4 py-3 rounded-lg nav-link" href="#find-us" data-nav-link>Find Us</a>
+<a class="font-label-md text-label-md text-center bg-primary text-on-primary px-4 py-3 rounded-full mt-2 nav-link" href="#shop" data-nav-link>Shop Now</a>
+</nav>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-gradient-to-br from-surface to-surface-container" id="hero">
+<!-- Decorative Elements -->
+<div class="absolute top-20 left-10 w-64 h-64 bg-primary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+<div class="absolute top-40 right-20 w-72 h-72 bg-secondary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
+<div class="md:col-span-6 flex flex-col justify-center space-y-8 py-12 md:py-24">
+<div class="inline-flex items-center gap-2 bg-secondary-container/50 text-on-secondary-container font-label-md text-label-md px-4 py-1.5 rounded-full w-max">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span>New Release</span>
+</div>
+<div class="hero-brand">
+<svg class="hero-brand__logo" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sprite Cool bottle">
+<defs>
+<linearGradient id="bottleBody" x1="60" y1="55" x2="60" y2="185" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#fff8f7"/>
+<stop offset="0.45" stop-color="#ffe9eb"/>
+<stop offset="1" stop-color="#f4dddf"/>
+</linearGradient>
+<linearGradient id="bottleCap" x1="60" y1="8" x2="60" y2="52" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#ca4273"/>
+<stop offset="1" stop-color="#a9275a"/>
+</linearGradient>
+<linearGradient id="labelBand" x1="35" y1="108" x2="85" y2="148" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#a9275a"/>
+<stop offset="1" stop-color="#8c0b45"/>
+</linearGradient>
+</defs>
+<ellipse cx="60" cy="188" rx="28" ry="6" fill="#a9275a" opacity="0.15"/>
+<path d="M42 52h36c4 0 7 3 7 7v8c0 3-2 6-5 7l-3 128c0 4-4 7-8 7H51c-4 0-8-3-8-7L40 74c-3-1-5-4-5-7v-8c0-4 3-7 7-7z" fill="url(#bottleBody)" stroke="#ddbfc5" stroke-width="1.5"/>
+<rect x="38" y="12" width="44" height="40" rx="8" fill="url(#bottleCap)"/>
+<rect x="44" y="20" width="32" height="8" rx="2" fill="#fff8f7" opacity="0.35"/>
+<rect x="32" y="108" width="56" height="42" rx="6" fill="url(#labelBand)"/>
+<text x="60" y="128" text-anchor="middle" fill="#fffbff" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="0.08em">SPRITE</text>
+<text x="60" y="142" text-anchor="middle" fill="#ffb1c5" font-family="Playfair Display, serif" font-size="13" font-weight="700">Cool</text>
+<path d="M88 95c12-8 18-4 16 6-2 8-14 12-20 6" stroke="#ca4273" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
+<circle cx="92" cy="88" r="5" fill="#ffb1c5" opacity="0.9"/>
+<path d="M28 118c-6 4-8 12-2 16 4 3 10 0 12-6" fill="#ffd9e1" opacity="0.85"/>
+<ellipse cx="52" cy="72" rx="6" ry="14" fill="#ffffff" opacity="0.45" transform="rotate(-12 52 72)"/>
+</svg>
+<div>
+<h1 class="hero-brand__title">Sprite Cool</h1>
+<p class="hero-brand__tagline">The taste of India</p>
+<p class="hero-brand__accent">Rose flavored milk</p>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Experience the delicate balance of premium, farm-fresh milk infused with the subtle, sophisticated aroma of hand-picked rose petals.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_8px_16px_rgba(169,39,90,0.2)] hover:shadow-[0_12px_24px_rgba(169,39,90,0.3)]">
+                            Shop Now
+                        </button>
+<button class="glass-panel text-primary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-surface-variant transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_circle</span>
+                            Watch the Film
+                        </button>
+</div>
+</div>
+<div class="md:col-span-6 relative flex justify-center items-center h-[500px] md:h-[700px]">
+<!-- Image Placeholder -->
+<div class="relative w-full h-full max-w-[500px] mx-auto group">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl transform scale-90 group-hover:scale-100 transition-transform duration-700"></div>
+<img alt="Product Bottle" class="w-full h-full object-contain relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD68cE7qij-iu66HaL4U2hsFEQHBePPE60ULaBcbFFng2_AWdJmuW80R1ZgBiRyTkxAAkC2-bHiBRe_MSyeYqi5wE7rmSGDjNzZ9iAoz-A1UDyZ41UHdWKPxjJlofAsA50vbwtlto7v7yJ1alAHYTlRCLfAAui7CWugaZXE6DW5AJqywo0MxbsG2PAXl6eYN-Jk5fdoLfudSjJmukn5fJo-m-KcOmmG7RyZ8zu6q3mYKX1aa8gWmm7HHUDZOaWID-LZvzD6_y9GUNw"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Story -->
+<section class="py-24 md:py-32 bg-surface-bright relative" id="story">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 relative rounded-2xl overflow-hidden shadow-lg h-[400px] md:h-[600px]">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-fashion style macro shot of delicate pink rose petals resting on a pool of creamy, velvety white milk. The lighting is soft, natural, and high-key, creating a serene, elegant, and light-mode aesthetic. The color palette focuses on soft pinks, pure whites, and subtle creamy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZl2yyWbun5alxvVMT0AVahF9YYKwzq6xiro4JWTVfEn_4-AFSaNqzY40lW9Gm63EhsF8SX6xHV1wDsEMcs3ZbJb5jqbCq0P8cqLS56qr4e0_4e3pDjY-cbKZzfAiUgfwnBbW1Xkdscuvb7QT-g7BK35f2QqQDjOIYV1EvSTz4v_r7TuwEXpl7gh3GZsxxw_gJpBNOWRGSFrhjEP9ZxXsbn3amokG-Y8RTIIUKp8q0VVD8eQbG0ByyL1LwIPy7dDnHyvsRIr1RP_s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+</div>
+<div class="order-1 md:order-2 space-y-8">
+<h2 class="font-headline-md text-headline-md text-primary">The Art of Infusion</h2>
+<div class="w-12 h-1 bg-primary rounded-full"></div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Sprite Cool is born from a desire to elevate the everyday beverage. We start with the highest quality milk, sourced from responsible dairy farms. 
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Through a proprietary cold-steeping process, we introduce the essence of damask roses, capturing their most delicate aromatic notes without any artificial bitterness. The result is a creamy, perfectly balanced drink that refreshes the body and calms the mind.
+                        </p>
+<div class="flex gap-4 pt-4">
+<span class="inline-flex items-center gap-1 text-secondary font-label-md text-label-md bg-secondary-container/30 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">check</span> Cold-Pressed
+                            </span>
+<span class="inline-flex items-center gap-1 text-secondary font-label-md text-label-md bg-secondary-container/30 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">check</span> Real Botanicals
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Bento Grid -->
+<section class="py-24 md:py-32 bg-surface" id="benefits">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Nourish &amp; Delight</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Thoughtfully crafted to provide essential nutrients while delivering a premium sensory experience.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="glass-panel p-8 rounded-2xl hover:bg-white/80 transition-colors flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[32px]">done</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Rich in Calcium</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Fortified with essential minerals to support bone health and daily vitality.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-8 rounded-2xl hover:bg-white/80 transition-colors flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[32px]">psychiatry</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Naturally Flavored</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">No artificial syrups. Only real rose extract for an authentic floral note.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-8 rounded-2xl hover:bg-white/80 transition-colors flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[32px]">ac_unit</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Refreshing Taste</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Best served chilled. A perfectly balanced texture that isn't too heavy.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 md:py-32 bg-surface-bright relative" id="gallery">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Moments of Cool Serenity</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">From sunrise pours to evening sips — see how Sprite Cool fits into every refreshing ritual.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg">
+<img class="w-full h-full min-h-[280px] object-cover" alt="Product bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD68cE7qij-iu66HaL4U2hsFEQHBePPE60ULaBcbFFng2_AWdJmuW80R1ZgBiRyTkxAAkC2-bHiBRe_MSyeYqi5wE7rmSGDjNzZ9iAoz-A1UDyZ41UHdWKPxjJlofAsA50vbwtlto7v7yJ1alAHYTlRCLfAAui7CWugaZXE6DW5AJqywo0MxbsG2PAXl6eYN-Jk5fdoLfudSjJmukn5fJo-m-KcOmmG7RyZ8zu6q3mYKX1aa8gWmm7HHUDZOaWID-LZvzD6_y9GUNw"/>
+</div>
+<div class="rounded-2xl overflow-hidden shadow-md">
+<img class="w-full h-40 object-cover" alt="Rose milk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZl2yyWbun5alxvVMT0AVahF9YYKwzq6xiro4JWTVfEn_4-AFSaNqzY40lW9Gm63EhsF8SX6xHV1wDsEMcs3ZbJb5jqbCq0P8cqLS56qr4e0_4e3pDjY-cbKZzfAiUgfwnBbW1Xkdscuvb7QT-g7BK35f2QqQDjOIYV1EvSTz4v_r7TuwEXpl7gh3GZsxxw_gJpBNOWRGSFrhjEP9ZxXsbn3amokG-Y8RTIIUKp8q0VVD8eQbG0ByyL1LwIPy7dDnHyvsRIr1RP_s"/>
+</div>
+<div class="rounded-2xl glass-panel flex items-center justify-center p-6">
+<p class="font-headline-sm text-headline-sm text-primary text-center">250ml Perfect Pour</p>
+</div>
+<div class="col-span-2 glass-panel rounded-2xl p-6 flex items-center gap-4">
+<p class="font-body-md text-body-md text-on-surface-variant flex-1">Best enjoyed ice-cold within 3 days of opening.</p>
+<span class="material-symbols-outlined text-primary text-[48px]">ac_unit</span>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 md:py-32 bg-surface relative" id="reviews">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-md text-headline-md text-primary text-center mb-12">Loved Across India</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<blockquote class="glass-panel p-8 rounded-2xl italic text-on-surface">"The rose note is subtle, not perfume-y." — Priya S.</blockquote>
+<blockquote class="glass-panel p-8 rounded-2xl italic text-on-surface md:-translate-y-4">"Finally a flavored milk that feels premium." — Arjun K.</blockquote>
+<blockquote class="glass-panel p-8 rounded-2xl italic text-on-surface">"Stunning on my cafe shelf." — Meera D.</blockquote>
+</div>
+</div>
+</section>
+<section class="py-24 md:py-32 bg-surface-container relative" id="ingredients">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h2 class="font-headline-md text-headline-md text-primary">Pure &amp; Transparent</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Farm-fresh milk, real rose essence, zero artificial colors.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel rounded-2xl p-6 text-center"><p class="font-headline-lg text-headline-lg text-primary">8g</p><p class="font-label-md text-label-md text-on-surface-variant">Protein</p></div>
+<div class="glass-panel rounded-2xl p-6 text-center"><p class="font-headline-lg text-headline-lg text-primary">120</p><p class="font-label-md text-label-md text-on-surface-variant">Calories</p></div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gradient-to-r from-primary to-primary-container text-center px-margin-mobile" id="shop">
+<h2 class="font-headline-md text-headline-md text-on-primary mb-6">Ready for Your First Splash?</h2>
+<a href="#find-us" class="inline-flex bg-on-primary text-primary font-label-md text-label-md px-8 py-4 rounded-full nav-link" data-nav-link>Find a Store</a>
+</section>
+<!-- Where to Buy -->
+<section class="py-24 md:py-32 bg-surface-container-low relative overflow-hidden" id="find-us">
+<div class="absolute inset-0 opacity-5">
+<!-- subtle background pattern could go here -->
+</div>
+<div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10 space-y-8">
+<h2 class="font-headline-md text-headline-md text-primary">Find Your Serenity</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Available at select premium grocers and boutique cafes near you.</p>
+<div class="relative max-w-xl mx-auto mt-8">
+<input class="w-full bg-surface border-b-2 border-outline-variant focus:border-primary px-4 py-4 pr-12 font-body-md text-body-md text-on-surface placeholder:text-outline bg-transparent outline-none transition-colors" placeholder="Enter your zip code or city..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary p-2 hover:bg-primary-container/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<div class="pt-12 flex justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<!-- Faux retailer logos -->
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">WholeFoods</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">Erewhon</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">Sprouts</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest full-width bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/30 flat no shadows flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-max-width mx-auto gap-gutter">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">Sprite Cool</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 Sprite Cool. Crafted with Floral Serenity.
+            </p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6 mt-6 md:mt-0">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Sustainability</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+</nav>
+</footer>
+<script>
+        const NAV_OFFSET = 88;
+        const scrollToSection = (hash) => {
+            const id = (hash || '').replace('#', '');
+            if (!id || id === 'hero') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+            const target = document.getElementById(id);
+            if (!target) return;
+            const top = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        };
+        const closeMobileNav = () => {
+            const menu = document.getElementById('nav-mobile-menu');
+            const toggle = document.getElementById('nav-menu-toggle');
+            if (!menu || !toggle) return;
+            menu.classList.remove('is-open');
+            menu.style.maxHeight = '0';
+            menu.style.opacity = '0';
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.querySelector('.nav-icon-menu')?.classList.remove('hidden');
+            toggle.querySelector('.nav-icon-close')?.classList.add('hidden');
+        };
+        document.querySelectorAll('[data-nav-link]').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (!href?.startsWith('#')) return;
+                e.preventDefault();
+                scrollToSection(href);
+                closeMobileNav();
+            });
+        });
+        document.getElementById('nav-menu-toggle')?.addEventListener('click', () => {
+            const menu = document.getElementById('nav-mobile-menu');
+            const toggle = document.getElementById('nav-menu-toggle');
+            const isOpen = menu.classList.toggle('is-open');
+            if (isOpen) {
+                menu.style.maxHeight = '400px';
+                menu.style.opacity = '1';
+                toggle.setAttribute('aria-expanded', 'true');
+                toggle.querySelector('.nav-icon-menu')?.classList.add('hidden');
+                toggle.querySelector('.nav-icon-close')?.classList.remove('hidden');
+            } else {
+                closeMobileNav();
+            }
+        });
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('global-nav');
+            if (window.scrollY > 20) nav.classList.add('shadow-sm');
+            else nav.classList.remove('shadow-sm');
+        });
+    </script>
+</body></html>

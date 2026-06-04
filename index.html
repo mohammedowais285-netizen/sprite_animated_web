@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thums Up Rose - Scroll Animation</title>
+  <meta name="description" content="Experience the smooth, high-quality scroll animation for Thums Up Rose Flavored Milk.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <!-- Playfair Display + Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#ca4273",
+            "on-tertiary-container": "#fffbff",
+            "surface-container-high": "#fae3e5",
+            "background": "#fff8f7",
+            "surface-container": "#ffe9eb",
+            "surface": "#fff8f7",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#777471",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#ffd9e1",
+            "on-secondary-container": "#755d5f",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#cbc5c2",
+            "secondary-container": "#f8d8db",
+            "on-primary-container": "#fffbff",
+            "primary-fixed-dim": "#ffb1c5",
+            "on-tertiary-fixed-variant": "#494644",
+            "on-secondary-fixed-variant": "#574144",
+            "surface-dim": "#ebd5d7",
+            "primary": "#a9275a",
+            "surface-variant": "#f4dddf",
+            "on-background": "#25181a",
+            "secondary": "#70585b",
+            "on-secondary-fixed": "#281719",
+            "surface-container-highest": "#f4dddf",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#fbdbde",
+            "inverse-surface": "#3b2d2f",
+            "outline-variant": "#ddbfc5",
+            "tertiary": "#5e5b59",
+            "secondary-fixed-dim": "#debfc2",
+            "on-surface": "#25181a",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#3f001b",
+            "tertiary-fixed": "#e7e1de",
+            "on-primary-fixed-variant": "#8c0b45",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#1d1b19",
+            "on-surface-variant": "#574146",
+            "surface-tint": "#ac2a5d",
+            "inverse-primary": "#ffb1c5",
+            "outline": "#8a7176",
+            "surface-bright": "#fff8f7",
+            "error": "#ba1a1a",
+            "inverse-on-surface": "#ffecee",
+            "surface-container-low": "#fff0f1",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "20px",
+            "max-width": "1280px",
+            "unit": "8px",
+            "margin-desktop": "80px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+            "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+
+  <link rel="stylesheet" href="/style.css">
+  
+  <style>
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- Sticky Navigation -->
+  <header class="site-nav" id="global-nav" aria-label="Main navigation">
+    <div class="site-nav__inner-wrap">
+    <div class="site-nav__inner">
+      <a href="#experience" class="site-nav__brand" data-nav-link>
+        <span class="material-symbols-outlined text-primary text-[28px] md:text-[32px]" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+        <span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">Sprite Cool</span>
+      </a>
+
+      <nav class="site-nav__links hidden lg:flex items-center gap-1" aria-label="Section links">
+        <a href="#experience" class="site-nav__link" data-nav-link>Experience</a>
+        <a href="#story" class="site-nav__link" data-nav-link>Our Story</a>
+        <a href="#benefits" class="site-nav__link" data-nav-link>Benefits</a>
+        <a href="#gallery" class="site-nav__link" data-nav-link>Gallery</a>
+        <a href="#reviews" class="site-nav__link" data-nav-link>Reviews</a>
+        <a href="#ingredients" class="site-nav__link" data-nav-link>Ingredients</a>
+        <a href="#find-us" class="site-nav__link" data-nav-link>Find Us</a>
+      </nav>
+
+      <div class="site-nav__actions">
+        <a href="#shop" class="site-nav__cta hidden md:inline-flex" data-nav-link>Shop Now</a>
+        <button type="button" class="site-nav__menu-btn lg:hidden" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-mobile-menu" aria-label="Open menu">
+          <span class="material-symbols-outlined nav-icon-menu">menu</span>
+          <span class="material-symbols-outlined nav-icon-close hidden">close</span>
+        </button>
+      </div>
+    </div>
+    </div>
+
+    <div class="site-nav__mobile lg:hidden" id="nav-mobile-menu">
+      <nav class="site-nav__mobile-links" aria-label="Mobile section links">
+        <a href="#experience" class="site-nav__mobile-link" data-nav-link>Experience</a>
+        <a href="#story" class="site-nav__mobile-link" data-nav-link>Our Story</a>
+        <a href="#benefits" class="site-nav__mobile-link" data-nav-link>Benefits</a>
+        <a href="#gallery" class="site-nav__mobile-link" data-nav-link>Gallery</a>
+        <a href="#reviews" class="site-nav__mobile-link" data-nav-link>Reviews</a>
+        <a href="#ingredients" class="site-nav__mobile-link" data-nav-link>Ingredients</a>
+        <a href="#find-us" class="site-nav__mobile-link" data-nav-link>Find Us</a>
+        <a href="#shop" class="site-nav__mobile-cta" data-nav-link>Shop Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Premium Preloader -->
+  <div id="loader" class="loader-container">
+    <div class="loader-content">
+      <div class="brand-logo-large">
+        <span class="brand-thums">THUMS UP</span>
+        <span class="brand-rose">ROSE</span>
+      </div>
+      <div class="progress-bar-wrapper">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      <p class="loader-status">Loading HD Frames... <span id="progress-text">0%</span></p>
+    </div>
+  </div>
+
+  <!-- Scroll animation anchor -->
+  <div id="experience" class="scroll-anchor scroll-anchor--experience" aria-hidden="true"></div>
+
+  <!-- Sticky Canvas Scroll Container -->
+  <div id="animation-container" class="animation-container">
+    <canvas id="scroll-canvas"></canvas>
+  </div>
+
+  <!-- Hero Title Overlay (fades out at 30% scroll) -->
+  <div id="hero-overlay" class="hero-overlay">
+    <div class="hero-brand hero-brand--overlay">
+      <svg class="hero-brand__logo" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <defs>
+          <linearGradient id="heroBottleBody" x1="60" y1="55" x2="60" y2="185" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff8f7"/>
+            <stop offset="0.45" stop-color="#ffe9eb"/>
+            <stop offset="1" stop-color="#f4dddf"/>
+          </linearGradient>
+          <linearGradient id="heroBottleCap" x1="60" y1="8" x2="60" y2="52" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#ca4273"/>
+            <stop offset="1" stop-color="#a9275a"/>
+          </linearGradient>
+          <linearGradient id="heroLabelBand" x1="35" y1="108" x2="85" y2="148" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#a9275a"/>
+            <stop offset="1" stop-color="#8c0b45"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="60" cy="188" rx="28" ry="6" fill="#a9275a" opacity="0.15"/>
+        <path d="M42 52h36c4 0 7 3 7 7v8c0 3-2 6-5 7l-3 128c0 4-4 7-8 7H51c-4 0-8-3-8-7L40 74c-3-1-5-4-5-7v-8c0-4 3-7 7-7z" fill="url(#heroBottleBody)" stroke="#ddbfc5" stroke-width="1.5"/>
+        <rect x="38" y="12" width="44" height="40" rx="8" fill="url(#heroBottleCap)"/>
+        <rect x="44" y="20" width="32" height="8" rx="2" fill="#fff8f7" opacity="0.35"/>
+        <rect x="32" y="108" width="56" height="42" rx="6" fill="url(#heroLabelBand)"/>
+        <text x="60" y="128" text-anchor="middle" fill="#fffbff" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="0.08em">SPRITE</text>
+        <text x="60" y="142" text-anchor="middle" fill="#ffb1c5" font-family="Playfair Display, serif" font-size="13" font-weight="700">Cool</text>
+        <path d="M88 95c12-8 18-4 16 6-2 8-14 12-20 6" stroke="#ca4273" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <circle cx="92" cy="88" r="5" fill="#ffb1c5" opacity="0.9"/>
+        <path d="M28 118c-6 4-8 12-2 16 4 3 10 0 12-6" fill="#ffd9e1" opacity="0.85"/>
+        <ellipse cx="52" cy="72" rx="6" ry="14" fill="#ffffff" opacity="0.45" transform="rotate(-12 52 72)"/>
+      </svg>
+      <div class="hero-brand__copy">
+        <h1 class="hero-brand__title">Sprite Cool</h1>
+        <p class="hero-brand__tagline">The taste of India</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scroll Down Indicator Overlay -->
+  <div id="scroll-overlay" class="scroll-overlay-container">
+    <div class="scroll-indicator">
+      <span class="indicator-text">Scroll down to splash</span>
+      <div class="mouse-icon">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll spacer for the canvas animation -->
+  <div id="scroll-spacer"></div>
+
+  <!-- Content sections from code.html (below the scroll animation) -->
+  <main id="content-sections" class="content-after-animation">
+
+    <!-- Our Story -->
+    <section class="py-24 md:py-32 bg-surface-bright relative" id="story">
+      <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div class="order-2 md:order-1 relative rounded-2xl overflow-hidden shadow-lg h-[400px] md:h-[600px]">
+            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZl2yyWbun5alxvVMT0AVahF9YYKwzq6xiro4JWTVfEn_4-AFSaNqzY40lW9Gm63EhsF8SX6xHV1wDsEMcs3ZbJb5jqbCq0P8cqLS56qr4e0_4e3pDjY-cbKZzfAiUgfwnBbW1Xkdscuvb7QT-g7BK35f2QqQDjOIYV1EvSTz4v_r7TuwEXpl7gh3GZsxxw_gJpBNOWRGSFrhjEP9ZxXsbn3amokG-Y8RTIIUKp8q0VVD8eQbG0ByyL1LwIPy7dDnHyvsRIr1RP_s" alt="Rose petals on creamy milk"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+          </div>
+          <div class="order-1 md:order-2 space-y-8">
+            <h2 class="font-headline-md text-headline-md text-primary">The Art of Infusion</h2>
+            <div class="w-12 h-1 bg-primary rounded-full"></div>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Sprite Cool is born from a desire to elevate the everyday beverage. We start with the highest quality milk, sourced from responsible dairy farms. 
+            </p>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Through a proprietary cold-steeping process, we introduce the essence of damask roses, capturing their most delicate aromatic notes without any artificial bitterness. The result is a creamy, perfectly balanced drink that refreshes the body and calms the mind.
+            </p>
+            <div class="flex gap-4 pt-4">
+              <span class="inline-flex items-center gap-1 text-secondary font-label-md text-label-md bg-secondary-container/30 px-3 py-1 rounded-full">
+                <span class="material-symbols-outlined text-[16px]">check</span> Cold-Pressed
+              </span>
+              <span class="inline-flex items-center gap-1 text-secondary font-label-md text-label-md bg-secondary-container/30 px-3 py-1 rounded-full">
+                <span class="material-symbols-outlined text-[16px]">check</span> Real Botanicals
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Bento Grid -->
+    <section class="py-24 md:py-32 bg-surface" id="benefits">
+      <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="font-headline-md text-headline-md text-primary">Nourish &amp; Delight</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Thoughtfully crafted to provide essential nutrients while delivering a premium sensory experience.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="glass-panel p-8 rounded-2xl hover:bg-white/80 transition-colors flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[32px]">done</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Rich in Calcium</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Fortified with essential minerals to support bone health and daily vitality.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass-panel p-8 rounded-2xl hover:bg-white/80 transition-colors flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[32px]">psychiatry</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Naturally Flavored</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">No artificial syrups. Only real rose extract for an authentic floral note.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass-panel p-8 rounded-2xl hover:bg-white/80 transition-colors flex flex-col items-center text-center space-y-4">
+            <div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[32px]">ac_unit</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Refreshing Taste</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Best served chilled. A perfectly balanced texture that isn't too heavy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-24 md:py-32 bg-surface-bright relative" id="gallery">
+      <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="text-center mb-16 space-y-4">
+          <span class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed font-label-md text-label-md px-4 py-1.5 rounded-full">
+            <span class="material-symbols-outlined text-[16px]">photo_camera</span>
+            Visual Story
+          </span>
+          <h2 class="font-headline-md text-headline-md text-primary">Moments of Cool Serenity</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">From sunrise pours to evening sips — see how Sprite Cool fits into every refreshing ritual.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-lg group">
+            <img class="w-full h-full min-h-[280px] md:min-h-[420px] object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD68cE7qij-iu66HaL4U2hsFEQHBePPE60ULaBcbFFng2_AWdJmuW80R1ZgBiRyTkxAAkC2-bHiBRe_MSyeYqi5wE7rmSGDjNzZ9iAoz-A1UDyZ41UHdWKPxjJlofAsA50vbwtlto7v7yJ1alAHYTlRCLfAAui7CWugaZXE6DW5AJqywo0MxbsG2PAXl6eYN-Jk5fdoLfudSjJmukn5fJo-m-KcOmmG7RyZ8zu6q3mYKX1aa8gWmm7HHUDZOaWID-LZvzD6_y9GUNw" alt="Sprite Cool bottle hero shot"/>
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-md group">
+            <img class="w-full h-40 md:h-48 object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZl2yyWbun5alxvVMT0AVahF9YYKwzq6xiro4JWTVfEn_4-AFSaNqzY40lW9Gm63EhsF8SX6xHV1wDsEMcs3ZbJb5jqbCq0P8cqLS56qr4e0_4e3pDjY-cbKZzfAiUgfwnBbW1Xkdscuvb7QT-g7BK35f2QqQDjOIYV1EvSTz4v_r7TuwEXpl7gh3GZsxxw_gJpBNOWRGSFrhjEP9ZxXsbn3amokG-Y8RTIIUKp8q0VVD8eQbG0ByyL1LwIPy7dDnHyvsRIr1RP_s" alt="Rose petals on milk"/>
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-md group bg-primary-container/20 flex items-center justify-center p-8">
+            <div class="text-center space-y-2">
+              <p class="font-headline-sm text-headline-sm text-primary">250ml</p>
+              <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Perfect pour</p>
+            </div>
+          </div>
+          <div class="col-span-2 rounded-2xl overflow-hidden shadow-md glass-panel p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+            <div class="flex-1 space-y-3 text-center md:text-left">
+              <h3 class="font-headline-sm text-headline-sm text-on-surface">Chill. Pour. Sip.</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">Best enjoyed ice-cold within 3 days of opening for peak floral freshness.</p>
+            </div>
+            <span class="material-symbols-outlined text-primary text-[64px] opacity-80">ac_unit</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="py-24 md:py-32 bg-surface relative overflow-hidden" id="reviews">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-40 pointer-events-none"></div>
+      <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="font-headline-md text-headline-md text-primary">Loved Across India</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Real voices from fans who made Sprite Cool part of their daily ritual.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <blockquote class="glass-panel p-8 rounded-2xl space-y-4">
+            <div class="flex gap-1 text-primary">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface italic">"The rose note is subtle, not perfume-y. My kids ask for it every morning."</p>
+            <footer class="font-label-md text-label-md text-secondary">— Priya S., Mumbai</footer>
+          </blockquote>
+          <blockquote class="glass-panel p-8 rounded-2xl space-y-4 md:-translate-y-4">
+            <div class="flex gap-1 text-primary">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface italic">"Finally a flavored milk that feels premium. The scroll experience sold me before the first sip."</p>
+            <footer class="font-label-md text-label-md text-secondary">— Arjun K., Bengaluru</footer>
+          </blockquote>
+          <blockquote class="glass-panel p-8 rounded-2xl space-y-4">
+            <div class="flex gap-1 text-primary">
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface italic">"Creamy, refreshing, and the packaging looks stunning on my cafe shelf."</p>
+            <footer class="font-label-md text-label-md text-secondary">— Meera D., Delhi</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ingredients -->
+    <section class="py-24 md:py-32 bg-surface-container relative" id="ingredients">
+      <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <h2 class="font-headline-md text-headline-md text-primary">Pure &amp; Transparent</h2>
+            <div class="w-12 h-1 bg-primary rounded-full"></div>
+            <p class="font-body-md text-body-md text-on-surface-variant">No mystery syrups. Every bottle lists exactly what goes in — farm-fresh milk, real rose essence, and a touch of natural sweetness.</p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">water_drop</span>
+                <span class="font-body-md text-body-md text-on-surface"><strong class="text-primary">88%</strong> farm-fresh toned milk</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">local_florist</span>
+                <span class="font-body-md text-body-md text-on-surface"><strong class="text-primary">Real</strong> damask rose extract — cold-steeped</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">block</span>
+                <span class="font-body-md text-body-md text-on-surface"><strong class="text-primary">Zero</strong> artificial colors or preservatives</span>
+              </li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="glass-panel rounded-2xl p-6 text-center space-y-2">
+              <p class="font-headline-lg text-headline-lg text-primary">8g</p>
+              <p class="font-label-md text-label-md text-on-surface-variant uppercase">Protein</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-6 text-center space-y-2">
+              <p class="font-headline-lg text-headline-lg text-primary">120</p>
+              <p class="font-label-md text-label-md text-on-surface-variant uppercase">Calories</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-6 text-center space-y-2">
+              <p class="font-headline-lg text-headline-lg text-primary">15%</p>
+              <p class="font-label-md text-label-md text-on-surface-variant uppercase">Daily Calcium</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-6 text-center space-y-2">
+              <p class="font-headline-lg text-headline-lg text-primary">12g</p>
+              <p class="font-label-md text-label-md text-on-surface-variant uppercase">Natural Sugars</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop CTA -->
+    <section class="py-20 md:py-28 relative overflow-hidden" id="shop">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary to-primary-container opacity-95"></div>
+      <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center space-y-8">
+        <h2 class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-on-primary">Ready for Your First Splash?</h2>
+        <p class="font-body-lg text-body-lg text-on-primary/90 max-w-xl mx-auto">Join thousands who've upgraded their chill moment. Limited launch packs ship nationwide.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+          <a href="#find-us" class="inline-flex items-center justify-center gap-2 bg-on-primary text-primary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-surface transition-colors shadow-lg" data-nav-link>
+            <span class="material-symbols-outlined">storefront</span>
+            Find a Store
+          </a>
+          <button type="button" class="inline-flex items-center justify-center gap-2 border-2 border-on-primary/60 text-on-primary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-on-primary/10 transition-colors">
+            <span class="material-symbols-outlined">notifications</span>
+            Notify Me
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Where to Buy -->
+    <section class="py-24 md:py-32 bg-surface-container-low relative overflow-hidden" id="find-us">
+      <div class="absolute inset-0 opacity-5"></div>
+      <div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10 space-y-8">
+        <h2 class="font-headline-md text-headline-md text-primary">Find Your Serenity</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant">Available at select premium grocers and boutique cafes near you.</p>
+        <div class="relative max-w-xl mx-auto mt-8">
+          <input class="w-full bg-surface border-b-2 border-outline-variant focus:border-primary px-4 py-4 pr-12 font-body-md text-body-md text-on-surface placeholder:text-outline bg-transparent outline-none transition-colors" placeholder="Enter your zip code or city..." type="text"/>
+          <button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary p-2 hover:bg-primary-container/10 rounded-full transition-colors">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+        </div>
+        <div class="pt-12 flex justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <div class="font-headline-sm text-headline-sm font-bold text-on-surface">WholeFoods</div>
+          <div class="font-headline-sm text-headline-sm font-bold text-on-surface">Erewhon</div>
+          <div class="font-headline-sm text-headline-sm font-bold text-on-surface">Sprouts</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-low border-t border-outline-variant/30 py-12">
+    <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter">
+      <div class="flex flex-col items-center md:items-start gap-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">local_florist</span>
+          <span class="font-headline-sm text-headline-sm font-bold text-primary">Sprite Cool</span>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          © 2024 Sprite Cool. Crafted with Floral Serenity.
+        </p>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-6 mt-6 md:mt-0">
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#story" data-nav-link>Our Story</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#gallery" data-nav-link>Gallery</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#find-us" data-nav-link>Find Us</a>
+        <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#shop" data-nav-link>Shop</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
